@@ -51,4 +51,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  ## Remember to change this value if enpoint for dtews changes
+  config.dtews_endpoint = 'http://localhost:3000/dtews/wsdl'
 end

@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'signer'
 
-class DigitalTransferDocument
+class Dtd
   @document = nil
   @@cert_path = '/Volumes/Yakumo/Documents/Sources/2017/cumplo/prueba/cesion_webservice/app/assets/keys/server.crt'
   @@key_path = '/Volumes/Yakumo/Documents/Sources/2017/cumplo/prueba/cesion_webservice/app/assets/keys/server.key'
@@ -33,9 +33,8 @@ class DigitalTransferDocument
     ## Now, sign every part of the DTE that NEEDS to be signed.
     sign_xml_fragment(document, '//DocumentoDTECedido/DTE' ,File.read(@@cert_path), File.read(@@key_path))
     sign_xml_fragment(document, '//DocumentoDTECedido' ,File.read(@@cert_path), File.read(@@key_path))
-    sign_xml_fragment(document, '//Cesiones/DTECedido' ,File.read(@@cert_path), File.read(@@key_path))
-    sign_xml_fragment(document, '//Cesiones/Cesion' ,File.read(@@cert_path), File.read(@@key_path))
-    sign_xml_fragment(document, '//AEC' ,File.read(@@cert_path), File.read(@@key_path))
+    sign_xml_fragment(document, '//Cesiones/Cesion/DocumentoCesion' ,File.read(@@cert_path), File.read(@@key_path))
+    sign_xml_fragment(document, '//DocumentoAEC' ,File.read(@@cert_path), File.read(@@key_path))
 
     @document = document
   end
@@ -48,9 +47,9 @@ class DigitalTransferDocument
       signer.private_key = OpenSSL::PKey::RSA.new(key)
       signer.security_node = signer.document.root
       signer.security_token_id = ""
-      signer.digest!(signer.document.root, :id => "", :enveloped => true)
+      signer.digest!(signer.document.root, :id => "")
       signer.sign!(:issuer_serial => true)
-      node.replace signer.document.to_xml
+      node.replace(signer.document.root)
     end
   end
 
