@@ -1,0 +1,3 @@
+
+class Purr
+end
