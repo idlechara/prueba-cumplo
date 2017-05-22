@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 
+  sender: one
+  recipient: one
+  document: MyText
+  transfer_timestamp: 2017-05-22 03:42:49
+  folio: MyString
+
+two:
+  amount: 
+  sender: two
+  recipient: two
+  document: MyText
+  transfer_timestamp: 2017-05-22 03:42:49
+  folio: MyString
