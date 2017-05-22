@@ -15,7 +15,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: root
-  host: 127.0.0.1
+  host: mysql
 
 development:
   <<: *default
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: gorogoro_production
-  username: gorogoro
+  username: root
   password: <%= ENV['GOROGORO_DATABASE_PASSWORD'] %>

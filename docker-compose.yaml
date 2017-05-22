@@ -1,0 +1,26 @@
+version: '2'
+services:
+  mysql:
+    image: mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+  selenium:
+    image: selenium/standalone-chrome
+  web:
+    build: .
+    command: sh bootstrap.sh
+    environment:
+    - GOROGORO_DATABASE_PASSWORD=root
+    - SII_USERNAME=root
+    - SII_PASSWORD=root
+    
+    volumes:
+      - ./webapp:/webapp
+    ports:
+      - "3000:3000"
+    links:
+      - mysql:mysql
+      - selenium:selenium
+    depends_on:
+      - mysql
+      - selenium

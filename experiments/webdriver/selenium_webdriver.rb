@@ -10,7 +10,7 @@ wait = Selenium::WebDriver::Wait.new(timeout: 0.1) # seconds
 wait.until { driver.find_element(id: "rutcntr") }
 
 driver.find_element(id: 'rutcntr').send_keys "***REMOVED***"
-driver.find_element(id: 'clave').send_keys "***REMOVED***"
+driver.find_element(id: 'clave').send_keys "password"
 driver.find_element(id: 'clave').submit
 
 ## Get the info and run

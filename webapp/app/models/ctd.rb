@@ -23,7 +23,7 @@ class Ctd < ApplicationRecord
   def validate_against_sii(doctype)
     puts "Calling back!"
     cap = Selenium::WebDriver::Remote::Capabilities.chrome(:ignoreProtectedModeSettings=>true,:ignoreZoomSetting=>true,:unexpectedAlertBehaviour=>"ignore")
-    driver = Selenium::WebDriver.for :remote, url: "http://127.0.0.1:4444/wd/hub", desired_capabilities: cap
+    driver = Selenium::WebDriver.for :remote, url: "http://selenium:4444/wd/hub", desired_capabilities: cap
 
     # Test RECC webpage
     ## Break login! <3
