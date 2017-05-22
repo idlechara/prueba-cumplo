@@ -16,5 +16,7 @@ module Gorogoro
     # -- all .rb files in that directory are automatically loaded.
     config.sii_username = ENV["SII_USERNAME"]
     config.sii_password = ENV["SII_PASSWORD"]
+    config.assets.compile = true
+    config.assets.precompile =  ['*.js', '*.css', '*.css.erb'] 
   end
 end
