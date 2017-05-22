@@ -1,0 +1,69 @@
+<%= form_tag("/new", method: "post") do %>
+
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+      <div class="mdl-card mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+          <h4 class="mdl-cell mdl-cell--12-col">Nuevo documento</h4>
+          <br><br><br><br>
+
+          <h6 class="mdl-cell mdl-cell--12-col">Cosas a tener en cuenta: </h6>
+          <h6 class="mdl-cell mdl-cell--12-col"> - Si se crea una nueva petición, se va a demorar un momento en salir de la consulta, dado que tiene que lanzar una instancia de Selenium Webdriver para obtener el estado del documento. </h6>
+          <h6 class="mdl-cell mdl-cell--12-col"> - Si se crea un documento con una fecha de transferencia diferente a la actual, este no se mostrará en la interfaz. </h6>
+
+          <br><br><br><br>
+
+          <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+            <div class="section__circle-container__circle mdl-color--primary"></div>
+          </div>
+          <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="[0-9]?[0-9].?[0-9][0-9][0-9].?[0-9][0-9][0-9]-([0-9]|k|K)" id="rut" name="rut_sender">
+              <label class="mdl-textfield__label" for="sample4">Rut cedente</label>
+              <span class="mdl-textfield__error">¡Rut inválido!</span>
+            </div>
+
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="[0-9]?[0-9].?[0-9][0-9][0-9].?[0-9][0-9][0-9]-([0-9]|k|K)" id="rut" name="rut_recipient">
+              <label class="mdl-textfield__label" for="sample4">Rut cesionario</label>
+              <span class="mdl-textfield__error">¡Rut inválido!</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="monto" name="amount">
+              <label class="mdl-textfield__label" for="sample4">Monto</label>
+              <span class="mdl-textfield__error">¡Monto no es un número!</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="[0-9]*" id="folio" name="folio">
+              <label class="mdl-textfield__label" for="sample4">Folio</label>
+              <span class="mdl-textfield__error">¡Folio no es un número!</span>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input class="mdl-textfield__input" type="text" pattern="[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]" id="date" name="date">
+              <label class="mdl-textfield__label" for="sample4">Fecha Transferencia</label>
+              <span class="mdl-textfield__error">¡Fecha inválida! Formato: DD/MM/AAAA</span>
+            </div>
+
+
+            <div class="actions">
+              <%= submit_tag("Agregar nuevo documento", :class=>"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast") %>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+<% end %>
+

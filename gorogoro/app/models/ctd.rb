@@ -1,26 +1,27 @@
 require "selenium-webdriver"
 
 class Ctd < ApplicationRecord
-  has_one :sender, :class_name => "Taxpayer"
-  has_one :recipient, :class_name => "Taxpayer"
+  belongs_to :sender, :class_name => "Taxpayer", :foreign_key => 'sender_id'
+  belongs_to :recipient, :class_name => "Taxpayer", :foreign_key => 'recipient_id'
 
-  def validate_document()
+  def validate_document!
     if self.status == "Cedido"
       return
-    end
-
-    [33, 34, 43, 46].each do |doctype|
-      self.validate_against_sii(doctype)
-      if(self.status == "Cedido")
-        return
+    else
+      [33, 34, 43, 46].each do |doctype|
+        validate_against_sii(doctype)
+        if(self.status == "Cedido")
+          break
+        end
       end
     end
-
+    self.save
   end
 
   private
 
   def validate_against_sii(doctype)
+    puts "Calling back!"
     cap = Selenium::WebDriver::Remote::Capabilities.chrome(:ignoreProtectedModeSettings=>true,:ignoreZoomSetting=>true,:unexpectedAlertBehaviour=>"ignore")
     driver = Selenium::WebDriver.for :remote, url: "http://127.0.0.1:4444/wd/hub", desired_capabilities: cap
 
@@ -59,12 +60,13 @@ class Ctd < ApplicationRecord
       result = driver.find_element(xpath: "/html/body/table[2]/tbody/tr[3]/td/font/b").text
       if(result.include? "Documento Cedido.")
         self.status = "Cedido"
+        puts("Hiss")
       end
 
 
     rescue Selenium::WebDriver::Error::UnhandledAlertError
-      puts(driver.switch_to.alert.text)
-      if(result.include? "Documento consultado no existe o no ha sido cedido.")
+      # puts(driver.switch_to.alert.text)
+      if(driver.switch_to.alert.text.include? "Documento consultado no existe o no ha sido cedido.")
         self.status = "No Cedido"
       end
     end

@@ -3,12 +3,104 @@
   <head>
     <title>Gorogoro</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+    <style>
+      #view-source {
+        position: fixed;
+        display: block;
+        right: 0;
+        bottom: 0;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        z-index: 900;
+      }
+    </style>
   </head>
 
-  <body>
-    <%= yield %>
+
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        <h3>Detección de cesiones</h3>
+      </div>
+      <br>
+      <br>
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        Esta aplicación consulta el estado de un documento cedido al Registro Público Electrónico de Transferencia de Créditos (RPETC), por medio de una instáncia local de Selenium WebDriver. Luego de recuperar la información esta es almacenada en la base de datos para futuras referencias.
+        Es posible extender la aplicación de saber la fecha de emisión de un documento. De ser así el servicio podría comportarse de manera completamente autónoma sin necesidad de tener una empresa registrada para poder acceder a la información de cesión (en teoría).
+
+      </div><br>
+      <br>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="mdl-layout__tab-panel is-active" id="overview">
+
+        <%= yield %>
+
+      </div>
+
+      <footer class="mdl-mega-footer">
+        <!--<div class="mdl-mega-footer&#45;&#45;middle-section">-->
+          <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+            <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+            <!--<h1 class="mdl-mega-footer&#45;&#45;heading">Documentación</h1>-->
+            <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+              <!--<li><a href="#">About</a></li>-->
+              <!--<li><a href="#">Terms</a></li>-->
+              <!--<li><a href="#">Partners</a></li>-->
+              <!--<li><a href="#">Updates</a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
+          <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+            <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+            <!--<h1 class="mdl-mega-footer&#45;&#45;heading">Details</h1>-->
+            <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+              <!--<li><a href="#">Spec</a></li>-->
+              <!--<li><a href="#">Tools</a></li>-->
+              <!--<li><a href="#">Resources</a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
+          <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+            <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+            <!--<h1 class="mdl-mega-footer&#45;&#45;heading">Technology</h1>-->
+            <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+              <!--<li><a href="#">How it works</a></li>-->
+              <!--<li><a href="#">Patterns</a></li>-->
+              <!--<li><a href="#">Usage</a></li>-->
+              <!--<li><a href="#">Products</a></li>-->
+              <!--<li><a href="#">Contracts</a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
+          <!--<div class="mdl-mega-footer&#45;&#45;drop-down-section">-->
+            <!--<input class="mdl-mega-footer&#45;&#45;heading-checkbox" type="checkbox" checked>-->
+            <!--<h1 class="mdl-mega-footer&#45;&#45;heading">FAQ</h1>-->
+            <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+              <!--<li><a href="#">Questions</a></li>-->
+              <!--<li><a href="#">Answers</a></li>-->
+              <!--<li><a href="#">Contact us</a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="mdl-mega-footer&#45;&#45;bottom-section">-->
+          <!--<div class="mdl-logo">-->
+            <!--Más información-->
+          <!--</div>-->
+          <!--<ul class="mdl-mega-footer&#45;&#45;link-list">-->
+            <!--<li><a href="Repositorio">Web Starter Kit</a></li>-->
+            <!--<li><a href="#">Help</a></li>-->
+            <!--<li><a href="#">Privacy and Terms</a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      </footer>
+    </main>
+  </div>
+  <% if not current_page?(:controller => 'credit_transfers', :action => 'new') %>
+      <a href="/new" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Agregar nuevo documento</a>
+  <%end%>
+
+  <script src="$$hosted_libs_prefix$$/$$version$$/material.min.js"></script>
   </body>
 </html>

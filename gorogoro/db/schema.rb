@@ -14,14 +14,16 @@ ActiveRecord::Schema.define(version: 20170522085843) do
 
   create_table "ctds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "amount"
-    t.integer "sender"
-    t.integer "recipient"
+    t.bigint "sender_id"
+    t.bigint "recipient_id"
     t.text "document"
     t.datetime "transfer_timestamp"
     t.string "folio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.index ["recipient_id"], name: "index_ctds_on_recipient_id"
+    t.index ["sender_id"], name: "index_ctds_on_sender_id"
   end
 
   create_table "taxpayers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
