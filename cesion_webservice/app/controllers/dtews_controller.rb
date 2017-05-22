@@ -131,25 +131,35 @@ class DtewsController < ApplicationController
 
     if valid_query
       resp_text = ""
+      start = (((Time.now.to_f*100000)-149541790000000)/1000).round
 
       # generate random data for before a certain date
-      (1.. 10).each() do |i|
-        d = Dtd.new(1000,
-                    '2017-05-19T09:33:22',
-                    '2017-05-19T12:33:22',
-                    '2017-05-30T09:33:22').document.at('AEC')
+      (1.. 30).each_with_index do |i, idx|
+        time_now = Time.now
+        less_days = (time_now - (Random.rand(120).days))
+        less_mins = (less_days - 1 - (Random.rand(120).minutes))
+        future_days = (time_now + 1 + (Random.rand(120).days))
+        d = Dtd.new(Random.rand(1000000)+100000,
+                    less_mins.utc.iso8601,
+                    less_days.utc.iso8601,
+                    future_days.utc.iso8601, false, idx).document.at('AEC')
         resp_text += d.to_xml
       end
+      start = start + 40
 
-      # generate random data for today
-      (1.. 10).each() do |i|
-        d = Dtd.new(1000,
-                    '2017-05-20T09:33:22',
-                    '2017-05-20T12:33:22',
-                    '2017-05-30T09:33:22').document.at('AEC')
+      # generate at least 4 documents for today
+      (1.. 4).each_with_index do |i, idx|
+        time_now = Time.now
+        less_days = (time_now - (Random.rand(120).days))
+        less_mins = (less_days - 1 - (Random.rand(120).minutes))
+        future_days = (time_now + 1 + (Random.rand(120).days))
+        # puts(time_now.utc.iso8601)
+        d = Dtd.new(Random.rand(1000000)+100000,
+                    less_mins.utc.iso8601,
+                    time_now.utc.iso8601,
+                    future_days.utc.iso8601, true, idx).document.at('AEC')
         resp_text += d.to_xml
       end
-
       resp_body = document.xpath("SII:RESPUESTA/SII:RESP_BODY").first
       resp_body.content = resp_text
     end

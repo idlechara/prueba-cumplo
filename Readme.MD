@@ -69,3 +69,25 @@ In this section we'll present all the info related to choicemaking on this proje
 
 ## Messy things
 * **Nokogiri:** It was a pain to make it work. Specially with pretty print issues which messed up my XML format everytime. It took me several hours to understand it's behaivour. Also, there is a huge difference in ```node.replace(signer.document.root)``` and ```node.replace(signer.document.to_xml)```
+
+* I messed up the implementation ([dev reaction at 5AM when realizing the mistake](reaction.jpg)). You can check the details [here](WhatHappenedAtThisPoint.MD).
+
+## Result
+* Just implemented the bare minimum requirements.
+
+## How to make it work
+* There is a user mantainer at webapp, on `/users` route. you need to create a user in order to query the webservice. It's not actually used at all by web service as it creates fake replies.
+* Then you go to `/transferrals` where you can start playing with the documents
+
+## Why that model? (CTD - CreditTransferDocument)
+Only the relevant models are included on the model, as those are the only ones used to fast-identify which document is needed.
+
+* **source:** Business name of the sender
+* **source_rut:** Rut of the sender
+* **destination:**  Business name of the target taxpayer
+* **destination_rut:** Business name of the target taxpayer
+* **transfer_date:** Most important field, as it's used to identify if the document has to be shown or not (everytime that user reloads transferral controller, it populates with new elements, which are expected to be filtered)
+* **folio:** Folio number
+* **amount:** Self explanatory -> $$$
+* **state:** If it was transfered or not.
+* **document:** The actual DTE

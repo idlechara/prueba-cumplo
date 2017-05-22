@@ -1,20 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Transferrals amount=<%= @result_len %></h1>
+<center>
+<!-- Simple Select -->
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+  <input class="mdl-textfield__input" type="text" id="sample1" value="Seleccione contribuyente..." readonly tabIndex="-1">
+  <label for="sample1" class="mdl-textfield__label">Contribuyente</label>
+  <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+    <% User.all.each do |users| %>
+        <li class="mdl-menu__item">
+          <%= link_to users.rut, :controller => :transferrals, :action => :show, :id => users.id %>
+        </li>
+    <%end %>
+  </ul>
+</div>
+</center>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  </tbody>
-</table>
-
-<%= @response_body %>
-
-<br>
-
-<%= link_to 'New Transferral', new_transferral_path %>

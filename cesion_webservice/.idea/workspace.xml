@@ -2,25 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28882254-5f17-45c4-ade5-c20a720eff3f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../cesion_webapp/app/assets/stylesheets/application.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Architecture.mdj" afterPath="$PROJECT_DIR$/../Architecture.mdj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Readme.MD" afterPath="$PROJECT_DIR$/../Readme.MD" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/_metadata_/metadata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/_metadata_/metadata.keystream" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/_metadata_/metadata.keystream.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/_metadata_/metadata.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/_metadata_/metadata_i" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/_metadata_/metadata_i.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/_src_/schema/sys.zip" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/a01911dc-daee-4429-a839-0d5c22d51532/_metadata_/metadata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/a01911dc-daee-4429-a839-0d5c22d51532/_metadata_/metadata.keystream" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/a01911dc-daee-4429-a839-0d5c22d51532/_metadata_/metadata.keystream.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/a01911dc-daee-4429-a839-0d5c22d51532/_metadata_/metadata.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/a01911dc-daee-4429-a839-0d5c22d51532/_metadata_/metadata_i" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/a01911dc-daee-4429-a839-0d5c22d51532/_metadata_/metadata_i.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/app/assets/images/welcome_card.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/public/welcome_card.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Dockerfile.server" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources.local.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/7d768bcc-4381-41ed-a715-b2b9d89e251a/storage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/dataSources/a01911dc-daee-4429-a839-0d5c22d51532.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/app/models/ctd.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/db/migrate/20170522010932_create_ctds.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/db/migrate/20170522022806_add_doc_to_cdt.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/public/uploads/user/certificate/1/server.crt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/public/uploads/user/private_key/1/server.key" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/test/fixtures/ctds.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cesion_webapp/test/models/ctd_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../docker-compose.yml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/keys/purr.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/.rakeTasks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/.idea/cesion_webapp.iml" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/cesion_webapp.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cesion_webapp/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/Gemfile" afterPath="$PROJECT_DIR$/../cesion_webapp/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/Gemfile.lock" afterPath="$PROJECT_DIR$/../cesion_webapp/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/../cesion_webapp/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/../cesion_webapp/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/config/environments/development.rb" afterPath="$PROJECT_DIR$/../cesion_webapp/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/../cesion_webapp/config/initializers/assets.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/../cesion_webapp/app/assets/stylesheets/application.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/app/controllers/transferrals_controller.rb" afterPath="$PROJECT_DIR$/../cesion_webapp/app/controllers/transferrals_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/app/views/transferrals/index.html.erb" afterPath="$PROJECT_DIR$/../cesion_webapp/app/views/transferrals/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/app/views/transferrals/show.html.erb" afterPath="$PROJECT_DIR$/../cesion_webapp/app/views/transferrals/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/config/application.rb" afterPath="$PROJECT_DIR$/../cesion_webapp/config/application.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/config/database.yml" afterPath="$PROJECT_DIR$/../cesion_webapp/config/database.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/config/routes.rb" afterPath="$PROJECT_DIR$/../cesion_webapp/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/keys/purr.rb" afterPath="$PROJECT_DIR$/app/assets/keys/purr.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/schemas/schema_cesion/.idea/AEC.example.xml" afterPath="$PROJECT_DIR$/app/assets/schemas/schema_cesion/.idea/AEC.example.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/db/schema.rb" afterPath="$PROJECT_DIR$/../cesion_webapp/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cesion_webapp/lib/transferrals.rb" afterPath="$PROJECT_DIR$/../cesion_webapp/lib/transferrals.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC.example.xml" afterPath="$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC.example.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/development.rb" afterPath="$PROJECT_DIR$/config/environments/development.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/dtews_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/dtews_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/dtd.rb" afterPath="$PROJECT_DIR$/lib/dtd.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -74,21 +103,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dtews_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/dtews_controller.rb">
+      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+            <state relative-caret-position="75">
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AEC.example.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC.example.xml">
+      <file leaf-file-name="dtews_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/dtews_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="259">
+              <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -106,43 +135,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cesion_v10.xsd" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/Cesion_v10.xsd">
+      <file leaf-file-name="AEC.example.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC.example.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2690">
-              <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DTECedido_v10.xsd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/DTECedido_v10.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DTE_v10.xsd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/DTE_v10.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="36" column="78" lean-forward="false" selection-start-line="36" selection-start-column="78" selection-end-line="36" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Recibos_v10.xsd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/Recibos_v10.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="608">
+              <caret line="73" column="42" lean-forward="false" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
               <folding>
-                <element signature="n#xs:annotation#0;n#xs:element#0;n#xs:sequence#0;n#xs:complexType#0;n#xs:element#0;n#xs:sequence#0;n#xs:complexType#0;n#xs:schema#0;n#!!top" expanded="false" />
+                <element signature="n#DTE#0;n#DocumentoDTECedido#0;n#DTECedido#0;n#Cesiones#0;n#DocumentoAEC#0;n#AEC#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -151,28 +150,18 @@
       <file leaf-file-name="dtd.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/dtd.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="58" column="3" lean-forward="false" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
+            <state relative-caret-position="45">
+              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="purr.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/keys/purr.rb">
+      <file leaf-file-name="database.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="92" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile.lock" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile.lock">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -193,8 +182,8 @@
       <find>documentoCes</find>
       <find>DocumentoCesion</find>
       <find>signat</find>
-      <find>estado</find>
       <find>estad</find>
+      <find>estado</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,10 +198,10 @@
         <option value="$PROJECT_DIR$/lib/dte.rb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/controllers/dtews_controller.rb" />
-        <option value="$PROJECT_DIR$/lib/dtd.rb" />
         <option value="$PROJECT_DIR$/app/assets/keys/purr.rb" />
         <option value="$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC.example.xml" />
+        <option value="$PROJECT_DIR$/lib/dtd.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/dtews_controller.rb" />
       </list>
     </option>
   </component>
@@ -478,6 +467,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.folders.ControllersFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cesion_webservice" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cesion_webservice" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.RailsModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.folders.ControllersFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DtewsController" />
+              <option name="myItemType" value="org.jetbrains.plugins.ruby.rails.projectView.v2.nodes.ControllerClassNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -854,12 +861,12 @@
       <workItem from="1495175038875" duration="259000" />
       <workItem from="1495175404311" duration="72000" />
       <workItem from="1495175496156" duration="6536000" />
-      <workItem from="1495220010252" duration="40378000" />
+      <workItem from="1495220010252" duration="50932000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47438000" />
+    <option name="totallyTimeSpent" value="57992000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1005,13 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1198,14 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1230,45 +1222,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/dtews_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/dtd.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="58" column="3" lean-forward="false" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/keys/purr.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
-          <caret line="92" column="17" lean-forward="true" selection-start-line="75" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+          <caret line="92" column="17" lean-forward="false" selection-start-line="75" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC.example.xml">
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        <state relative-caret-position="75">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC_v10.xsd">
+    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/Cesion_v10.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding>
-            <element signature="n#xs:annotation#0;n#xs:element#0;n#xs:sequence#0;n#xs:complexType#0;n#xs:element#0;n#xs:schema#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/DTECedido_v10.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,18 +1272,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/DTECedido_v10.xsd">
+    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC_v10.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        <state relative-caret-position="30">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding>
+            <element signature="n#xs:annotation#0;n#xs:element#0;n#xs:sequence#0;n#xs:complexType#0;n#xs:element#0;n#xs:schema#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/AEC.example.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="73" column="42" lean-forward="false" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+          <folding>
+            <element signature="n#DTE#0;n#DocumentoDTECedido#0;n#DTECedido#0;n#Cesiones#0;n#DocumentoAEC#0;n#AEC#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/schemas/schema_cesion/Cesion_v10.xsd">
+    <entry file="file://$PROJECT_DIR$/lib/dtd.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2690">
-          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="45">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/dtews_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
           <folding />
         </state>
       </provider>

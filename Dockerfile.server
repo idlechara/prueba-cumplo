@@ -1,0 +1,8 @@
+FROM ruby:2.3.1
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN mkdir /cesion_webservice
+WORKDIR /cesion_webservice
+ADD Gemfile /cesion_webservice/Gemfile
+ADD Gemfile.lock /cesion_webservice/Gemfile.lock
+RUN bundle install
+ADD . /cesion_webservice

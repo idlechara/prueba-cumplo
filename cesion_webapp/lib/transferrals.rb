@@ -2,17 +2,30 @@ require 'savon'
 require 'xmldsig'
 class Transferrals
 
-  def query_documents
+  ## Get all documents and store them on a database. Later we can query them.
+  def query_documents(consultante, token)
     # create a client for the service
     # client = Savon.client(wsdl: 'http://localhost:3000/dtews/wsdl')
     client = Savon.client(wsdl: Rails.configuration.dtews_endpoint)
-    response = client.call(:get_estado, message: {'consultante' => '***REMOVED***', 'token' => '123123'})
+    response = client.call(:get_estado, message: {'consultante' => consultante, 'token' => token})
     response_body = Nokogiri::XML(response.body[:get_estado_response][:value]).xpath('//SII:RESP_BODY').first.content #Assuming that there is only 1 result
 
     # We use fragment because we have multiple root nodes. This is not an error, in fact, it's specified that all
     # nodes are passed as a string on the response, so... Get all transfers for today!
     aec_fragments = Nokogiri::XML.fragment(response_body).children
-    aec_fragments.select { |aec_doc| aec_doc.xpath("DocumentoAEC/Cesiones/Cesion/DocumentoCesion/TmstCesion").text == '2017-05-19T12:33:22' }
+    aec_fragments.each do |aec_doc|
+      doc = Ctd.new
+      doc.folio = aec_doc.at("Folio").content
+      doc.amount = aec_doc.at("MontoCesion").content
+      doc.source = aec_doc.at("Cedente/RazonSocial").content
+      doc.source_rut = aec_doc.at("Cedente/RUT").content
+      doc.destination = aec_doc.at("Cesionario/RazonSocial").content
+      doc.destination_rut = aec_doc.at("Cesionario/RUT").content
+      doc.transfer_date = Time.parse(aec_doc.at("TmstCesion").content)
+      doc.state = aec_doc.at("EstadoCesion").content
+      doc.doc = aec_doc.to_xml
+      doc.save
+    end
   end
 
   def query_seed
@@ -23,7 +36,7 @@ class Transferrals
     response_body
   end
 
-  def query_token(cert, key)
+  def query_token(cert="", key="")
     seed = Nokogiri::XML <<-XML
       <?xml version="1.0"?>
       <getToken>
@@ -32,7 +45,7 @@ class Transferrals
       </item>
       </getToken>
     XML
-    sign_xml_fragment(seed, '//getToken' ,cert, key)
+    # sign_xml_fragment(seed, '//getToken' ,cert, key)
 
     client = Savon.client(wsdl: Rails.configuration.dtews_endpoint)
     response = client.call(:get_token, message: {'pszXml' => seed.to_xml})
@@ -40,14 +53,10 @@ class Transferrals
     response_body
   end
 
-  def query_token_raw(cert, key)
-    seed = Nokogiri::XML('<?xml version="1.0"?><getToken><item><Semilla>10</Semilla></item></getToken>')
-    sign_xml_fragment(seed, '//getToken' ,cert, key)
-    seed
-  end
 
   ## Routine to sign a fragment of the XML.
   ## I still don't understand how to make shared libraries among projects. So, this code is repeated from the other project
+  ## Feature broken, I meesed up the signing implementation
   def sign_xml_fragment(document, path, cert, key)
     document.xpath(path).each do |node|
       signer = Signer.new(node)
@@ -61,5 +70,4 @@ class Transferrals
     end
   end
 end
-
 
