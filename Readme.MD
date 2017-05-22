@@ -31,4 +31,4 @@ You can check my previous commits. It's still there, but I don't feel like just 
 The previous version aimed more to prove that I can simulate most aspects of SII behaivour, but I didn't counted with some malformed XMLs, the lack of documentation (about a failing service) and that I would be studying for my Networking examfor about two days.
 
 ## Ok, I want to test this thing. What do I need?
-First of all you need to configure some fields. 
+First of all you need to configure some fields on [docker-compose.yaml](docker-compose.yaml) file. It's pretty straightforward.
