@@ -16,11 +16,29 @@ driver.find_element(id: 'clave').submit
 ## Get the info and run
 driver.find_element(name: 'rut_emisor').send_keys "00000000"
 driver.find_element(name: 'dv_emisor').send_keys "8"
-driver.find_element(name: 'folio').send_keys "027"
+driver.find_element(name: 'folio').send_keys "233"
+
+#### Extract all options from the select box
+options=driver.find_element(name: 'tipo_docto').find_elements(:tag_name => "option")
+ 
+#### Select document type (33)
+options.each do |g|
+  if g.attribute("value") == "33"
+    puts "found you"
+    g.click
+    break
+  end
+end
+
 begin
     driver.execute_script("document.myform.action ='/cgi_rtc/RTC/RTCConsulta.cgi' ;valConsulta();")
     wait = Selenium::WebDriver::Wait.new(timeout: 0.1) # seconds
-    wait.until { driver.find_element(id: "rut_emisor") }
+    wait.until { driver.find_element(xpath: "/html/body/table[2]/tbody/tr[3]/td/font/b") }
+    result = driver.find_element(xpath: "/html/body/table[2]/tbody/tr[3]/td/font/b").text
+    if(result.include? "Documento Cedido.")
+        puts "Cedido ctm"
+    end
+    
 
 rescue Selenium::WebDriver::Error::UnhandledAlertError
     puts(driver.switch_to.alert.text)

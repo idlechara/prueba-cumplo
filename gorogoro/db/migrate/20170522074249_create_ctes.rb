@@ -2,8 +2,8 @@ class CreateCtes < ActiveRecord::Migration[5.1]
   def change
     create_table :ctes do |t|
       t.integer :amount
-      t.integer :sender
-      t.integer :recipient
+      t.references :senderrake
+      t.references :recipient
       t.text :document
       t.datetime :transfer_timestamp
       t.string :folio
