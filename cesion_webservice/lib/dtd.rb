@@ -8,7 +8,7 @@ class Dtd
   @@base_transfer_document = 'app/assets/schemas/schema_cesion/AEC.example.xml'
 
   # Generates a random Cesion file with "random" parameters
-  def initialize(value, emit_date, transfer_date, deadline_tmst)
+  def initialize(value, emit_date, transfer_date, deadline_tmst, valid, folio)
     # Use default document at cesion_webservice/app/assets/schemas/schema_cesion/AEC.example.xml
     document = Nokogiri::XML(File.read(@@base_transfer_document))
 
@@ -29,12 +29,25 @@ class Dtd
       amount.content = value
     end
 
+    document.xpath('//Folio').each_with_index  do |folio_val, idx|
+      folio_val.content = folio
+    end
 
-    ## Now, sign every part of the DTE that NEEDS to be signed.
-    sign_xml_fragment(document, '//DocumentoDTECedido/DTE' ,File.read(@@cert_path), File.read(@@key_path))
-    sign_xml_fragment(document, '//DocumentoDTECedido' ,File.read(@@cert_path), File.read(@@key_path))
-    sign_xml_fragment(document, '//Cesiones/Cesion/DocumentoCesion' ,File.read(@@cert_path), File.read(@@key_path))
-    sign_xml_fragment(document, '//DocumentoAEC' ,File.read(@@cert_path), File.read(@@key_path))
+    document.xpath('//EstadoCesion').each do |state|
+      if valid
+        state.content = "Cedido"
+      else
+        state.content = "No Cedido"
+      end
+    end
+
+    # ## Every signature is broken.
+    # ## Now, sign every part of the DTE that NEEDS to be signed.
+    # sign_xml_fragment(document, '//DocumentoDTECedido/DTE' ,File.read(@@cert_path), File.read(@@key_path))
+    # sign_xml_fragment(document, '//DocumentoDTECedido' ,File.read(@@cert_path), File.read(@@key_path))
+    # sign_xml_fragment(document, '//Cesiones/Cesion/DocumentoCesion' ,File.read(@@cert_path), File.read(@@key_path))
+    # sign_xml_fragment(document, '//DocumentoAEC' ,File.read(@@cert_path), File.read(@@key_path))
+    #
 
     @document = document
   end
