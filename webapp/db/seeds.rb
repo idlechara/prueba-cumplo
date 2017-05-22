@@ -5,53 +5,54 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# [Taxpayer, Ctd].each(&:delete_all)
+[Taxpayer, Ctd].each(&:delete_all)
 #
 #
 
 ## I wanted to use faker for this but, since I can fetch all info form SII... Whatever <3
 ## Here you can add your datasources for taxpayers
 ## Be careful, since SII is prone to mess up with SSL sometimes. If that happens here, then all will be broken
-# datasources = [
-#     "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_nomipyme.csv",
-#     "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_mipyme.csv",
-#     "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_fiscales.csv"
-# ]
-#
-# thread_main = datasources.map do | source |
-#   Thread.new do
-#     ## Remove the comments on this block if you want to use more threads. :3
-#     ## My test indicates that with only thread level is enough. So, don't add more.
-#     # thread_count = []
-#     open(source).each_line do |line|
-#
-#       # thread_sub = Thread.new do
-#         rut, business_name, resolution_number, resolution_date, approval_date, region = line.split(/;/)
-#         # puts "Adding new Taxpayer: " + business_name.force_encoding('iso-8859-1').encode('utf-8')
-#         t = Taxpayer.new
-#         t.rut = rut.force_encoding('iso-8859-1').encode('utf-8')
-#         t.business_name = business_name.force_encoding('iso-8859-1').encode('utf-8')
-#         t.region = region.force_encoding('iso-8859-1').encode('utf-8')
-#         t.save!
-#       # end
-#
-#       # thread_count.push thread_sub
-#       #
-#       # if thread_count.length > 2
-#       #   thread_count.each do |th|
-#       #     th.join
-#       #   end
-#       # end
-#
-#     end
-#   end
-# end
-#
-# thread_main.each do |thread|
-#   # puts(thread)
-#   thread.join
-# end
+datasources = [
+    "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_nomipyme.csv",
+    "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_mipyme.csv",
+    "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_fiscales.csv"
+]
 
+puts "Downloading Taxpayers from SII. Go and grab a coffee, this will take A WHILE (30 mins maybe as it is a full dump)"
+thread_main = datasources.map do | source |
+  Thread.new do
+    ## Remove the comments on this block if you want to use more threads. :3
+    ## My test indicates that with only thread level is enough. So, don't add more.
+    # thread_count = []
+    open(source).each_line do |line|
+
+      # thread_sub = Thread.new do
+        rut, business_name, resolution_number, resolution_date, approval_date, region = line.split(/;/)
+        # puts "Adding new Taxpayer: " + business_name.force_encoding('iso-8859-1').encode('utf-8')
+        t = Taxpayer.new
+        t.rut = rut.force_encoding('iso-8859-1').encode('utf-8')
+        t.business_name = business_name.force_encoding('iso-8859-1').encode('utf-8')
+        t.region = region.force_encoding('iso-8859-1').encode('utf-8')
+        t.save!
+      # end
+
+      # thread_count.push thread_sub
+      #
+      # if thread_count.length > 2
+      #   thread_count.each do |th|
+      #     th.join
+      #   end
+      # end
+
+    end
+  end
+end
+
+thread_main.each do |thread|
+  # puts(thread)
+  thread.join
+end
+puts "Taxpayers on DB! Now populating with some documents"
 ## Now populate existing documents
 documents = [['027', '$2122960', '76.273.545-8', '76.177.621-5'],
             ['026', '$702100', '76.273.545-8', '76.177.621-5'],
@@ -118,7 +119,7 @@ documents.each do | doc |
 
 end
 
-
+puts "DB seeded"
 
 
 

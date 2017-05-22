@@ -14,7 +14,7 @@ module Gorogoro
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.sii_username = '***REMOVED***'
-    config.sii_password = '***REMOVED***'
+    config.sii_username = ENV["SII_USERNAME"]
+    config.sii_password = ENV["SII_PASSWORD"]
   end
 end
