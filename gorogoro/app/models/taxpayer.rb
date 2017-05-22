@@ -1,0 +1,2 @@
+class Taxpayer < ApplicationRecord
+end
