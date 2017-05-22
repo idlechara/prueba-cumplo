@@ -12,45 +12,45 @@
 ## I wanted to use faker for this but, since I can fetch all info form SII... Whatever <3
 ## Here you can add your datasources for taxpayers
 ## Be careful, since SII is prone to mess up with SSL sometimes. If that happens here, then all will be broken
-datasources = [
-    "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_nomipyme.csv",
-    "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_mipyme.csv",
-    "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_fiscales.csv"
-]
-
-thread_main = datasources.map do | source |
-  Thread.new do
-    ## Remove the comments on this block if you want to use more threads. :3
-    ## My test indicates that with only thread level is enough. So, don't add more.
-    # thread_count = []
-    open(source).each_line do |line|
-
-      # thread_sub = Thread.new do
-        rut, business_name, resolution_number, resolution_date, approval_date, region = line.split(/;/)
-        puts "Adding new Taxpayer: " + business_name.force_encoding('iso-8859-1').encode('utf-8')
-        t = Taxpayer.new
-        t.rut = rut.force_encoding('iso-8859-1').encode('utf-8')
-        t.business_name = business_name.force_encoding('iso-8859-1').encode('utf-8')
-        t.region = region.force_encoding('iso-8859-1').encode('utf-8')
-        t.save!
-      # end
-
-      # thread_count.push thread_sub
-      #
-      # if thread_count.length > 2
-      #   thread_count.each do |th|
-      #     th.join
-      #   end
-      # end
-
-    end
-  end
-end
-
-thread_main.each do |thread|
-  puts(thread)
-  thread.join
-end
+# datasources = [
+#     "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_nomipyme.csv",
+#     "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_mipyme.csv",
+#     "https://palena.sii.cl/cvc_cgi/dte/ee_consulta_empresas_dwnld?NOMBRE_ARCHIVO=ee_empresas_fiscales.csv"
+# ]
+#
+# thread_main = datasources.map do | source |
+#   Thread.new do
+#     ## Remove the comments on this block if you want to use more threads. :3
+#     ## My test indicates that with only thread level is enough. So, don't add more.
+#     # thread_count = []
+#     open(source).each_line do |line|
+#
+#       # thread_sub = Thread.new do
+#         rut, business_name, resolution_number, resolution_date, approval_date, region = line.split(/;/)
+#         # puts "Adding new Taxpayer: " + business_name.force_encoding('iso-8859-1').encode('utf-8')
+#         t = Taxpayer.new
+#         t.rut = rut.force_encoding('iso-8859-1').encode('utf-8')
+#         t.business_name = business_name.force_encoding('iso-8859-1').encode('utf-8')
+#         t.region = region.force_encoding('iso-8859-1').encode('utf-8')
+#         t.save!
+#       # end
+#
+#       # thread_count.push thread_sub
+#       #
+#       # if thread_count.length > 2
+#       #   thread_count.each do |th|
+#       #     th.join
+#       #   end
+#       # end
+#
+#     end
+#   end
+# end
+#
+# thread_main.each do |thread|
+#   # puts(thread)
+#   thread.join
+# end
 
 ## Now populate existing documents
 documents = [['027', '$2122960', '76.273.545-8', '76.177.621-5'],
@@ -101,14 +101,21 @@ documents = [['027', '$2122960', '76.273.545-8', '76.177.621-5'],
 
 documents.each do | doc |
   folio, amount, sender, reciever = doc
-  puts "Adding new Ctd: #" + folio + " " + sender
+  # puts "Adding new Ctd: #" + folio + " " + sender
   c = Ctd.new
   c.folio = folio
   c.amount = amount.gsub!('$','')
   c.sender = Taxpayer.find_by_rut(sender.gsub!('.',''))
   c.recipient = Taxpayer.find_by_rut(reciever.gsub!('.',''))
+  c.transfer_timestamp = Time.now.utc.iso8601
   c.status = "Desconocido"
-  c.save!
+  if c.valid?
+    c.save!
+    ## Beware! This can take a WHILE
+    c.validate_document!
+    puts (c.sender.rut)
+  end
+
 end
 
 

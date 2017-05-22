@@ -1,0 +1,69 @@
+<!--<p id="notice"><%= notice %></p>-->
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <h4 class="mdl-cell mdl-cell--12-col">Documentos cedidos</h4>
+      <h6 class="mdl-cell mdl-cell--12-col">Los documentos de esta categoría corresponden a documentos para los cuales el Registro Público Electrónico de Transferencia de Créditos (RPETC) indica que han sido cedidos. </h6>
+      <br><br><br><br>
+      <% @ctds_valid.each do | doc | %>
+          <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+            <div class="section__circle-container__circle mdl-color--primary"></div>
+          </div>
+          <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+            <h5>Documento <%= doc.folio %> emitido por <%= doc.sender.rut %> </h5>
+            Este documento emitido por <b><%= doc.sender.business_name %></b> para <b><%= doc.recipient.business_name %></b> cuenta con
+            un crédito por <%= number_to_currency(doc.amount, unit: "$", separator: ",", delimiter: ".", precision: 0) %> pesos chilenos.
+            <br><br>
+            Fue emitido el día <b><%= doc.transfer_timestamp.day %>/<%= doc.transfer_timestamp.month %>/<%= doc.transfer_timestamp.year %></b>.
+            <br><br>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <h4 class="mdl-cell mdl-cell--12-col">Documentos no cedidos</h4>
+      <h6 class="mdl-cell mdl-cell--12-col">Los documentos de esta categoría corresponden a documentos para los cuales el Registro Público Electrónico de Transferencia de Créditos (RPETC) muestra un error debido a que se no existe o bien no fue cedido. </h6>
+      <br><br><br><br><br><br>
+      <% @ctds_invalid.each do | doc | %>
+          <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+            <div class="section__circle-container__circle mdl-color--primary"></div>
+          </div>
+          <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+            <h5>Documento <%= doc.folio %> emitido por <%= doc.sender.rut %> </h5>
+            Este documento emitido por <b><%= doc.sender.business_name %></b> para <b><%= doc.recipient.business_name %></b> cuenta con
+            un crédito por <%= number_to_currency(doc.amount, unit: "$", separator: ",", delimiter: ".", precision: 0) %> pesos chilenos.
+            <br><br>
+            Fue emitido el día <b><%= doc.transfer_timestamp.day %>/<%= doc.transfer_timestamp.month %>/<%= doc.transfer_timestamp.year %></b>.
+            <br><br>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+      <h4 class="mdl-cell mdl-cell--12-col">Documentos en verificación</h4>
+      <h6 class="mdl-cell mdl-cell--12-col">Los documentos de esta categoría corresponden a documentos que están en proceso de revisión. El proceso puede tomar desde 5 a 40 segundos dependiendo de las especificaciones de la máquina en la cual el servidor esté montado. </h6>
+      <br><br><br><br><br><br>
+      <% @ctds_unkown.each do | doc | %>
+          <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+            <div class="section__circle-container__circle mdl-color--primary"></div>
+          </div>
+          <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+            <h5>Documento <%= doc.folio %> emitido por <%= doc.sender.rut %> </h5>
+            Este documento emitido por <b><%= doc.sender.business_name %></b> para <b><%= doc.recipient.business_name %></b> cuenta con
+            un crédito por <%= number_to_currency(doc.amount, unit: "$", separator: ",", delimiter: ".", precision: 0) %> pesos chilenos.
+            <br><br>
+            Fue emitido el día <b><%= doc.transfer_timestamp.day %>/<%= doc.transfer_timestamp.month %>/<%= doc.transfer_timestamp.year %></b>.
+            <br><br>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</section>
