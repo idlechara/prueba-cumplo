@@ -80,3 +80,7 @@ Enjoy some popcorn while docker-compose does everything for you. Grabbing all ta
 * **Mounting application, fixing proxies and dealing with DNSs:** May 22 09:40 CLT to May 22 18:10 CLT 
 
 Lesson learned, don't mess with your DNS server.
+
+### Memory patch
+After looking at some logs, it seems that rails+selenium+docker are a pretty resource hungry combo and well, my VPS only has 
+512MB RAM and a single 1GHz processor. This caused some requests to be lost, a workload near 8.2 and the entire VPS performance being degraded (because it not only contains this app, it also manages dockerized containers for proxies, blogs, forum, some webpages and other shit). Because of that I had to execute the save method earlier on the document checking loop. Sorry, my fault.
