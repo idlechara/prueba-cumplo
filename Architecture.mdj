@@ -234,7 +234,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+source: Taxpayer",
+											"text": "+sender: Taxpayer",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -263,7 +263,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+destination: Taxpayer",
+											"text": "+recipient: Taxpayer",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -1490,11 +1490,13 @@
 							"_parent": {
 								"$ref": "AAAAAAFcLrBkRZcdGtw="
 							},
-							"name": "source",
+							"name": "sender",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "Taxpayer",
+							"type": {
+								"$ref": "AAAAAAFcLrkKYZd1RYk="
+							},
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -1508,11 +1510,13 @@
 							"_parent": {
 								"$ref": "AAAAAAFcLrBkRZcdGtw="
 							},
-							"name": "destination",
+							"name": "recipient",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "Taxpayer",
+							"type": {
+								"$ref": "AAAAAAFcLrkKYZd1RYk="
+							},
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,

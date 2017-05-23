@@ -9,7 +9,7 @@ driver.navigate.to "https://palena.sii.cl/rtc/RTC/RTCConsultas.html"
 wait = Selenium::WebDriver::Wait.new(timeout: 0.1) # seconds
 wait.until { driver.find_element(id: "rutcntr") }
 
-driver.find_element(id: 'rutcntr').send_keys "***REMOVED***"
+driver.find_element(id: 'rutcntr').send_keys "00000000-0"
 driver.find_element(id: 'clave').send_keys "password"
 driver.find_element(id: 'clave').submit
 

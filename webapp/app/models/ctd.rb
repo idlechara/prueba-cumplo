@@ -10,12 +10,19 @@ class Ctd < ApplicationRecord
     else
       [33, 34, 43, 46].each do |doctype|
         validate_against_sii(doctype)
+        ## Memory patch
+        ## When running on low end servers, sometimes
+        ## the thread gets interrupted due to low memory
+        ## or starvation. In order to prevent this
+        ## we save the object as soon as we detect a change on it
         if(self.status == "Cedido")
+          self.save  ## Memory patch
           break
         end
       end
+      self.save  ## Memory patch
     end
-    self.save
+    self.save ## Memory patch
   end
 
   private
@@ -60,6 +67,8 @@ class Ctd < ApplicationRecord
       result = driver.find_element(xpath: "/html/body/table[2]/tbody/tr[3]/td/font/b").text
       if(result.include? "Documento Cedido.")
         self.status = "Cedido"
+        ## Memory patch (explained above)
+        self.save
         puts("Hiss")
       end
 
