@@ -11,8 +11,8 @@ services:
     command: sh bootstrap.sh
     environment:
     - GOROGORO_DATABASE_PASSWORD=root
-    - SII_USERNAME=***REMOVED***
-    - SII_PASSWORD=***REMOVED***
+    - SII_USERNAME=root
+    - SII_PASSWORD=root
     
     volumes:
       - ./webapp:/webapp
