@@ -52,7 +52,7 @@ class Ctd < ApplicationRecord
     #### Extract all options from the select box
     options=driver.find_element(name: 'tipo_docto').find_elements(:tag_name => "option")
 
-    #### Select document type (33)
+    #### Select doc type
     options.each do |g|
       if g.attribute("value") == doctype
         g.click
