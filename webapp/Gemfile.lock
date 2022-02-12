@@ -95,7 +95,8 @@ GEM
       mini_portile2 (~> 2.1.0)
     populator (1.0.0)
     public_suffix (2.0.5)
-    puma (3.8.2)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -186,7 +187,7 @@ DEPENDENCIES
   material_design_lite-rails (~> 1.3)
   mysql2 (>= 0.3.18, < 0.5)
   populator
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.1)
   sass-rails (~> 5.0)
   selenium-webdriver
